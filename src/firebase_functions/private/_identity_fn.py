@@ -108,6 +108,9 @@ def _auth_multi_factor_settings_from_token_data(token_data: dict[str,
 
 def _auth_user_record_from_token_data(token_data: dict[str, _typing.Any]):
     from firebase_functions.identity_fn import AuthUserRecord
+
+    print("[[DEBUG]] token_data", token_data)
+
     return AuthUserRecord(
         uid=token_data["uid"],
         email=token_data.get("email"),
